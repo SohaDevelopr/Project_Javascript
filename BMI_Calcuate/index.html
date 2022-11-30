@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" dir="rtl">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>BMI Calculate</title>
+    <!-- Main Template CSS File -->
+    <link rel="stylesheet" href="CSS/style.css" />
+  </head>
+  <body>
+    <div class="box">
+      <h1>حساب BMI</h1>
+      <span id="sp1">الوزن :</span>
+      <input type="text" id="input1" placeholder="كجم" required="" />
+      <span id="sp2">الطول :</span>
+      <input type="text" id="input2" placeholder="سم" required="" />
+      <input type="button" id="btn" required="" value="احسب" />
+      <div class="box-result">
+        <h3>BMI الخاص بك :</h3>
+        <h2 id="result">00.00</h2>
+        <p id="comment"></p>
+      </div>
+    </div>
+  </body>
+
+  <!-- Start code js -->
+
+  <script>
+    const input1 = document.getElementById("input1");
+    const input2 = document.getElementById("input2");
+    const btn = document.getElementById("btn");
+    const result = document.getElementById("result");
+    const comment = document.getElementById("comment");
+    const sp1 = document.getElementById("sp1");
+    const sp2 = document.getElementById("sp2");
+
+    function fun() {
+      var num = input1.value / Math.pow(input2.value, 2);
+      var bmi = Math.round(num * 100) / 100;
+      if (bmi < 18) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "نحافة";
+        sp1.style.color = "#FED049";
+        sp2.style.color = "#FED049";
+        comment.style.color = "#FED049";
+        result.style.color = " #FED049";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#FED049";
+        input1.style.borderColor = "#FED049";
+        input2.style.borderColor = "#FED049";
+        input1.style.color = "#FED049";
+        input2.style.color = "#FED049";
+        btn.style.background = "#FED049";
+      } else if (bmi >= 18 && bmi < 25) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "وزن مثالي";
+        sp1.style.color = " #68B984 ";
+        sp2.style.color = " #68B984 ";
+        comment.style.color = " #68B984 ";
+        result.style.color = " #68B984 ";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#68B984";
+        input1.style.borderColor = "#68B984";
+        input2.style.borderColor = "#68B984";
+        input1.style.color = "#68B984";
+        input2.style.color = "#68B984";
+        btn.style.background = "#68B984";
+      } else if (bmi >= 25 && bmi < 30) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "وزن زائد";
+        sp1.style.color = " #F49D1A ";
+        sp2.style.color = " #F49D1A ";
+        comment.style.color = " #F49D1A ";
+        result.style.color = " #F49D1A ";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#F49D1A";
+        input1.style.borderColor = "#F49D1A";
+        input2.style.borderColor = "#F49D1A";
+        input1.style.color = "#F49D1A";
+        input2.style.color = "#F49D1A";
+        btn.style.background = "#F49D1A";
+      } else if (bmi >= 30 && bmi < 35) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "سمنة درجة أولى";
+        sp1.style.color = " #DC3535 ";
+        sp2.style.color = " #DC3535 ";
+        comment.style.color = " #DC3535 ";
+        result.style.color = " #DC3535 ";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#DC3535";
+        input1.style.borderColor = "#DC3535";
+        input2.style.borderColor = "#DC3535";
+        input1.style.color = "#DC3535";
+        input2.style.color = "#DC3535";
+        btn.style.background = "#DC3535";
+      } else if (bmi >= 35 && bmi < 40) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "سمنة درجة ثانية";
+        sp1.style.color = " #971549 ";
+        sp2.style.color = " #971549 ";
+        comment.style.color = " #971549 ";
+        result.style.color = " #971549 ";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#971549";
+        input1.style.borderColor = "#971549";
+        input2.style.borderColor = "#971549";
+        input1.style.color = "#971549";
+        input2.style.color = "#971549";
+        btn.style.background = "#971549";
+      } else if (bmi > 40) {
+        result.innerHTML = bmi;
+        comment.innerHTML = "سمنة خطيرة";
+        sp1.style.color = "#470031";
+        sp2.style.color = "#470031";
+        comment.style.color = " #470031 ";
+        result.style.color = " #470031 ";
+        comment.style.borderStyle = "solid";
+        comment.style.borderColor = "#470031";
+        input1.style.borderColor = "#470031";
+        input2.style.borderColor = "#470031";
+        input1.style.color = "#470031";
+        input2.style.color = "#470031";
+        btn.style.background = "#470031";
+      } else {
+        result.innerHTML = "00.00";
+        comment.innerHTML = "";
+      }
+    }
+    btn.addEventListener("click", fun);
+  </script>
+</html>
