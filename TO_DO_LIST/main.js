@@ -7,15 +7,15 @@ const btnAdd = document.getElementById("add");
 // Identification Array Object
 
 let task = {
-  title: "مهمة",
-  isDone: false,
+  "title": "مهمة",
+  "isDone": false
 };
 
 let listTasks = [
   {
-    title: "مهمة",
-    isDone: false,
-  },
+    "title": "مهمة",
+    "isDone": false
+  }
 ];
 
 // Storage Array in LocalStorage
@@ -61,8 +61,8 @@ fillTasksOnThePage();
 btnAdd.addEventListener("click", function () {
   if (input.value !== "") {
     let taskObj = {
-      title: `${input.value}`,
-      isDone: false,
+      "title": `${input.value}`,
+      "isDone": false
     };
 
     listTasks.push(taskObj);
