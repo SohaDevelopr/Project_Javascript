@@ -15,7 +15,7 @@ let listTasks = [
   {
     "title": "مهمة",
     "isDone": false
-  }
+  },
 ];
 
 // Storage Array in LocalStorage
