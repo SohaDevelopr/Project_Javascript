@@ -56,6 +56,7 @@ function fillTasksOnThePage() {
   }
 }
 
+storeTask()
 fillTasksOnThePage();
 
 // Event Add New Object in Array When Click Button
