@@ -1,10 +1,10 @@
-@import url('https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Tajawal:wght@200;300;400;500;700;800;900&display=swap");
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Tajawal', sans-serif;
+  font-family: "Tajawal", sans-serif;
   border: none;
   outline: none;
 }
@@ -27,7 +27,9 @@ body {
   height: auto;
   background-color: aliceblue;
   padding: 12px 15px;
-  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,   rgba(0, 0, 0, 0.12) 0px -12px 30px,   rgba(0, 0, 0, 0.12) 0px 4px 6px,   rgba(0, 0, 0, 0.17) 0px 12px 13px,    rgba(0, 0, 0, 0.09) 0px -3px 5px;
+  box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+    rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+    rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
   border-radius: 12px;
   -webkit-border-radius: 12px;
   -moz-border-radius: 12px;
@@ -100,6 +102,7 @@ h1 {
   padding: 20px;
 }
 
+
 .task {
   width: 85%;
   height: 60px;
@@ -114,11 +117,11 @@ h1 {
   -ms-border-radius: 5px 12px 12px 5px;
   -o-border-radius: 5px 12px 12px 5px;
   box-shadow: rgba(168, 168, 168, 0.5) 0px 3px 5px;
-  transition: 1s;
-  -webkit-transition: 1s;
-  -moz-transition: 1s;
-  -ms-transition: 1s;
-  -o-transition: 1s;
+  transition: 0.5s;
+  -webkit-transition: 0.5s;
+  -moz-transition: 0.5s;
+  -ms-transition: 0.5s;
+  -o-transition: 0.5s;
 }
 
 .task:hover {
@@ -132,7 +135,7 @@ h1 {
 .txt {
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .txt button {
@@ -146,40 +149,38 @@ h1 {
 
 .txt button i {
   font-size: 15px;
-  color: #54B435;
+  color: #54b435;
 }
-
 
 h2 {
   font-size: 15px;
 }
 
-.done{
+.done {
   text-decoration: line-through;
   color: #8d8d90;
 }
-
 
 .icon {
   width: 68px;
   display: flex;
   justify-content: space-between;
-  align-items: center; 
+  align-items: center;
 }
 
 .icon button {
-   display: flex;
-   justify-content: center;
-   align-items: center;
-   width: 30px;
-   height: 30px;
-   background-color: transparent;
-   cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 30px;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 /* Media Queries */
 
-@media  (max-width: 770px) {
+@media (max-width: 770px) {
   .box {
     width: 95%;
   }
@@ -201,6 +202,18 @@ h2 {
   .box {
     width: 70%;
   }
+}
+
+/* Animation */
+@keyframes animeTask {
+  0% {
+    transform:scale(0);
+    opacity: 0;
+}
+  100% {
+    transform: scale(1);
+    opacity: 1;
+}
 }
 
 /* End Box */

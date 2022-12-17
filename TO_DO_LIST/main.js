@@ -4,7 +4,6 @@ const tasks = document.getElementById("tasks");
 const input = document.getElementById("input");
 const btnAdd = document.getElementById("add");
 
-
 // Identification Array Object
 
 let task = {
@@ -22,7 +21,6 @@ let listTasks = [
 // Storage Array in LocalStorage
 listTasks = JSON.parse(localStorage.getItem("myTask"));
 
-
 // Function Show All Element Array in Webpage
 function fillTasksOnThePage() {
   tasks.innerHTML = "";
@@ -37,8 +35,7 @@ function fillTasksOnThePage() {
                 <button onclick="completeTask(${index})"><i class="fa-regular fa-circle-xmark" style= "color: red;"></i></button>
                 <h2 class="done">${task.title}</h2>
                 `
-                : 
-                `                
+                    : `                
                 <button onclick="completeTask(${index})"><i class="fa-regular fa-circle-check"></i></button>
                 <h2>${task.title}</h2>
                 `
@@ -62,15 +59,20 @@ fillTasksOnThePage();
 // Event Add New Object in Array When Click Button
 
 btnAdd.addEventListener("click", function () {
-  let taskObj = {
-    title: `${input.value}`,
-    isDone: false,
-  };
+  if (input.value !== "") {
+    let taskObj = {
+      title: `${input.value}`,
+      isDone: false,
+    };
 
-  listTasks.push(taskObj);
-  storeTask();
-  fillTasksOnThePage();
-  input.value = "";
+    listTasks.push(taskObj);
+    storeTask();
+    fillTasksOnThePage();
+    input.value = "";
+    // Add Animation for new task
+    var element = document.querySelector(".task:last-child");
+    element.style.animation = "animeTask .3s ease";
+  }
 });
 
 //Function Check Complete Task
@@ -89,11 +91,13 @@ function completeTask(index) {
 // Function Edit Task
 
 function editTask(index) {
-  let newTitle = input.value;
-  listTasks[index].title = newTitle;
-  storeTask();
-  fillTasksOnThePage();
-  input.value = "";
+  if (input.value !== "") {
+    let newTitle = input.value;
+    listTasks[index].title = newTitle;
+    storeTask();
+    fillTasksOnThePage();
+    input.value = "";
+  }
 }
 
 // Function Delete Task
