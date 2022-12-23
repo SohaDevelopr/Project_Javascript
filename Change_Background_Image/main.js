@@ -2,7 +2,7 @@ let btnLeft = document.getElementById("btn-left");
 let btnRight = document.getElementById("btn-right");
 let box_img = document.getElementById("box-img");
 
-// Scroll Box Img OncliK Button 
+// Scroll Box Img OncliK Button
 
 btnLeft.onclick = () => {
   box_img.scrollLeft -= 50;
@@ -11,7 +11,6 @@ btnLeft.onclick = () => {
 btnRight.onclick = () => {
   box_img.scrollLeft += 50;
 };
-
 
 // Change Body Background Image Onclick img
 
@@ -28,12 +27,10 @@ toggleItem(document.querySelectorAll(".img"));
 
 img_1.onclick = () => {
   document.body.style.backgroundImage = `url(../${img_1.getAttribute("src")})`;
-  img_1.classList.add("active")
 };
 
 img_2.onclick = () => {
   document.body.style.backgroundImage = `url(../${img_2.getAttribute("src")})`;
-  img_1.classList.remove("active")
 };
 
 img_3.onclick = () => {
@@ -56,7 +53,7 @@ img_7.onclick = () => {
   document.body.style.backgroundImage = `url(../${img_7.getAttribute("src")})`;
 };
 
-// Add Class Active Onclick 
+// Add Class Active Onclick
 
 function toggleItem(elem) {
   for (var i = 0; i < elem.length; i++) {
