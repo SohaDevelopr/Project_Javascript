@@ -26,31 +26,31 @@ let img_7 = document.getElementById("img-7");
 toggleItem(document.querySelectorAll(".img"));
 
 img_1.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_1.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_1.getAttribute("src")})`;
 };
 
 img_2.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_2.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_2.getAttribute("src")})`;
 };
 
 img_3.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_3.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_3.getAttribute("src")})`;
 };
 
 img_4.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_4.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_4.getAttribute("src")})`;
 };
 
 img_5.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_5.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_5.getAttribute("src")})`;
 };
 
 img_6.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_6.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_6.getAttribute("src")})`;
 };
 
 img_7.onclick = () => {
-  document.body.style.backgroundImage = `url(../${img_7.getAttribute("src")})`;
+  document.body.style.backgroundImage = `url(${img_7.getAttribute("src")})`;
 };
 
 // Add Class Active Onclick
