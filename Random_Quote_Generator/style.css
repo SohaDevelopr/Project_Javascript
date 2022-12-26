@@ -1,0 +1,97 @@
+/* Google Fonts Libary */
+@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900;1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-weight: 600;
+    font-family: 'IBM Plex Sans Arabic', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background-color: #7D0633;
+}
+
+/* Start Container */
+.container {
+    width: 550px;
+    background-color: #ffffff;
+    padding: 35px 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    box-shadow: rgba(255, 255, 255, 0.1) 0px 1px 1px 0px inset,
+     rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, 
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px;
+}
+
+.contect {
+    width: 85%;
+    margin-top: 20px;
+    margin: 20px auto 0;
+    text-align: center;
+}
+
+.contect p {
+  font-size: 1.2em;
+  line-height: 2;
+  white-space: 2px;
+  color: #252525;
+} 
+
+.contect h3 {
+    font-size: 17px;
+    margin: 10px 0 20px;
+    color: #6E6D6D;
+}
+
+.contect button {
+    font-weight: 600;
+    padding: 8px 30px;
+    border: none;
+    outline: none;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    cursor: pointer;
+    background-color: #7D0633;
+    color: #ffffff;
+    box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.contect button:hover {
+    transform: translateY(-2px);
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+    -webkit-transform: translateY(-2px);
+    -moz-transform: translateY(-2px);
+    -ms-transform: translateY(-2px);
+    -o-transform: translateY(-2px);
+}
+
+/* Media Query */
+
+@media (max-width: 767px) {
+    .container {
+        width: 95%;
+    }
+
+    .contect {
+        width: 100%;
+    }
+}
+
+/* End Container */
