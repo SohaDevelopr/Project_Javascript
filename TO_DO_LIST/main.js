@@ -19,8 +19,7 @@ let listTasks = [
 ];
 
 // Storage Array in LocalStorage
-listTasks = JSON.parse(localStorage.getItem("myTask"));
-
+listTasks = JSON.parse(localStorage.getItem("myTask"))
 console.log(listTasks)
 
 // Function Show All Element Array in Webpage
