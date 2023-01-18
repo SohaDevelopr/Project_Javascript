@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Poll</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="box">
+        <header>If you write a book about failure, <br> 
+        and it doesn't sell, is it called success?</header>
+        <div class="contect">
+
+            <div class="poll">
+                <div class="head">
+                    <input type="checkbox" id="check1" class="check1" onclick="selectOnlyThis(this.id)">
+                    <label for="opt-1">Definitely a success</label>
+                </div>
+                <div class="percent-box">
+                    <div class="progress" id="pgs-1"></div>
+                    <span class="percent" id="per-1">65%</span>
+                </div>
+            </div>
+
+            <div class="poll">
+                <div class="head">
+                    <input type="checkbox" id="check2" class="check2" onclick="selectOnlyThis(this.id)">
+                    <label for="opt-2">No.</label>
+                </div>
+                <div class="percent-box">
+                    <div class="progress" id="pgs-2"></div>
+                    <span class="percent" id="per-2">12%</span>
+                </div>
+            </div>
+
+            <div class="poll">
+                <div class="head">
+                    <input type="checkbox" id="check3" class="check3" onclick="selectOnlyThis(this.id)">
+                    <label for="opt-3">Only if it's in the How To section of the library.</label>
+                </div>
+                <div class="percent-box">
+                    <div class="progress" id="pgs-3"></div>
+                    <span class="percent" id="per-3">23%</span>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="btn">
+            <button id="btn">Submit</button>
+        </div>
+
+    </div>
+
+    <!-- Script -->
+    <script src="main.js"></script>
+</body>
+</html>

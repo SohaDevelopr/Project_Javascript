@@ -1,0 +1,135 @@
+/* Start Global Rules */
+/* Google Fonts Library */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background-color: #e3f2fd;
+}
+
+/* End Global Rules */
+
+.wrapper {
+    width: 400px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50% , -50%);
+    -webkit-transform: translate(-50% , -50%);
+    -moz-transform: translate(-50% , -50%);
+    -ms-transform: translate(-50% , -50%);
+    -o-transform: translate(-50% , -50%);
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.palette-color {
+    width: 95%;
+    height: 220px;
+    margin: 0 auto;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+}
+
+.palette-color .color {
+    flex-basis: 31%;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 12px;
+    font-weight: 600;
+    color: #000;
+    position: relative;
+}
+
+
+.palette-color .color:first-of-type {
+    background-color: #ECA39D;
+}
+
+.palette-color .color:nth-child(2) {
+    background-color: #2653AF;
+}
+
+.palette-color .color:nth-child(3) {
+    background-color: #18288D;
+}
+
+.palette-color .color:last-of-type {
+    background-color: #FFC13D;
+}
+
+.btn-box {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.btn-box button {
+    width: 95%;
+    margin: 30px auto 0;
+    font-size: 16px;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 12px;
+    -webkit-border-radius: 12px;
+    -moz-border-radius: 12px;
+    -ms-border-radius: 12px;
+    -o-border-radius: 12px;
+    color: #fff;
+    background-color: #1e88e5;
+    cursor: pointer;
+    box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+}
+
+.btn-box button:hover {
+    background-color: #1976d2;
+}
+
+@media (max-width: 359px) {
+    .wrapper {
+        padding: 20px 15px;
+    }
+
+    .palette-color,
+    .btn-box button {
+        width: 100%;
+    }
+
+    .palette-color {
+        height: 200px;
+    }
+
+    .palette-color .color {
+        font-size: 10px;
+    }
+}
+
+@media (max-width: 767px) {
+    .wrapper {
+        width: 95%;
+    }
+}
