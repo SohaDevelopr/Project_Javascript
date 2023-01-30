@@ -57,13 +57,12 @@ let notes = [
     "description": `These book cover makers are great if you are a self published author wanting to make your
       own book cover in seconds! No Photoshop or Illustrator needed.`,
     "date": "April 3, 2023",
-  },
+  }
 ];
 
 // Store Note in Local Storage
-
-notes = JSON.parse(localStorage.getItem("myNote"));
-console.log(notes);
+ notes = JSON.parse(localStorage.getItem('notes'))
+ console.log(notes)
 
 
 // ========== Function Show Notes in The Page ==========
@@ -95,6 +94,7 @@ function fillNotesOnThePage() {
 
 storeNote();
 fillNotesOnThePage();
+
 
 
 // ========== Add New Note ==========
@@ -155,5 +155,5 @@ function getDate() {
 // ================ STORAGE FUNCTION ==================
 function storeNote() {
   let noteString = JSON.stringify(notes);
-  localStorage.setItem("myNote", noteString)
+  localStorage.setItem('notes', noteString);
 }
