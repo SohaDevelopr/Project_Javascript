@@ -110,7 +110,7 @@ body {
 }
 
 
-
+/* Media Query  */
 @media (max-width: 359px) {
     .wrapper {
         padding: 20px 15px;
@@ -123,6 +123,7 @@ body {
     }
 }
 
+/* Animation */
 @keyframes anime {
     0% {
         opacity: 1;

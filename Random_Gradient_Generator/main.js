@@ -1,7 +1,6 @@
 let circle = document.getElementById("circle"),
 gradientColor = document.getElementById("gradient-color"),
-generateBtn = document.getElementById("generate-btn")
-;
+generateBtn = document.getElementById("generate-btn");
 
 circle.onclick = () => {
   circle.style.setProperty("--after-opacity", "1");
@@ -29,10 +28,7 @@ let generateGrad = () => {
     let colorTwo = randomColor();
     let angle = Math.floor(Math.random() * 360);
     gradientColor.style.background = `linear-gradient(${angle}deg , ${colorOne} , ${colorTwo})`
-    // console.log(colorOne,colorTwo)
     output = `background: linear-gradient(${angle}deg , ${colorOne} , ${colorTwo});`
 }
 
 generateBtn.addEventListener("click", generateGrad);
-
-// window.onload = generateGrad;

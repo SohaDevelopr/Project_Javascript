@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Online Code Edtoir</title>
+    <!-- CSS File -->
+    <link rel="stylesheet" href="CSS/style.css">
+    <!-- Fontawsome Library -->
+    <link rel="stylesheet" href="CSS/all.min.css">
+</head>
+<body>
+    <main>
+    <section class="box-edit">
+        <menu>
+            <button class="change active" data-cont=".editHtml"><i class="fa-brands fa-html5"></i>HTML</button>
+            <button class="change" data-cont=".editCss"><i class="fa-brands fa-css3-alt"></i>CSS</button>
+            <button class="change" data-cont=".editJs"><i class="fa-brands fa-js"></i>JS</button>
+        </menu>
+        <section>
+            <textarea class="edit editHtml" onkeyup="run()"></textarea>
+            <textarea class="edit editCss" placeholder="/* Write your Code here */" onkeyup="run()"></textarea>
+            <textarea class="edit editJs" placeholder="// Write your Code here" onkeyup="run()"></textarea>
+        </section>
+    </section>
+
+    <section class="box-browser">
+        <div class="hd-browser">
+            <div class="title" id="title">
+                <i class="fa-solid fa-earth-americas"></i>
+                <h3>Browser</h3>
+            </div>
+            <div class="settings">
+                <button onclick="restart()"><i class="fa-solid fa-rotate-right"></i></button>
+                <button onclick="download()"><i class="fa-regular fa-circle-down"></i></i></button>
+                <button onclick="darkMode()"><i class="fa-solid fa-circle-half-stroke"></i></button>
+            </div>
+        </div>
+      <iframe id="output"></iframe>
+    </section>
+    </main>
+
+    <!-- Script File -->
+    <script src="main.js"></script>
+</body>
+</html>

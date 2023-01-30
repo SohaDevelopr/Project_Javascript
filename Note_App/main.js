@@ -8,8 +8,8 @@ const popup_box = document.getElementById("popup-box"),
   popupTitle = popup_box.querySelector("header p"),
   addBtn = popup_box.querySelector("#btnAdd"),
   contect = document.getElementById("contect");
-let bg_color = document.querySelectorAll(".group-color .color");
 
+// List Months
 const months = [
   "January",
   "February",
@@ -25,23 +25,14 @@ const months = [
   "December",
 ];
 
-var colors = [
-  "#9EA1D",
-  "#A8D1D1",
-  "#FFD56F",
-  "#FD8A8A",
-  "#89C4E1",
-  "#FFBF86",
-  "#97DBAE",
-];
+let isUpdate = false,updateId;
 
-let isUpdate = false,
-  updateId;
-
+// Event Listener Button Add Note
 btn_add.addEventListener("click", () => {
   popup_box.style.display = "block";
 });
 
+// Close Widonw Add/Update Note
 close_win.addEventListener("click", () => {
   isUpdate = false;
   titleTag.value = "";
@@ -50,6 +41,8 @@ close_win.addEventListener("click", () => {
   addBtn.innerHTML = "Add Note";
   popup_box.style.display = "none";
 });
+
+// List Notes
 
 let note = {
   "title": "This is a Title",
@@ -67,9 +60,13 @@ let notes = [
   },
 ];
 
+// Store Note in Local Storage
+
 notes = JSON.parse(localStorage.getItem("myNote"));
 console.log(notes);
 
+
+// ========== Function Show Notes in The Page ==========
 function fillNotesOnThePage() {
   contect.innerHTML = "";
   let index = 0;
@@ -99,6 +96,8 @@ function fillNotesOnThePage() {
 storeNote();
 fillNotesOnThePage();
 
+
+// ========== Add New Note ==========
 addBtn.addEventListener("click", () => {
   let noteObj = {
     "title": `${titleTag.value.trim()}`,
@@ -114,9 +113,13 @@ addBtn.addEventListener("click", () => {
   close_win.click();
   storeNote();
   fillNotesOnThePage();
+  // Add Animation To The New Note
   var element = document.querySelector(".note:first-child");
   element.style.animation = "anime .3s ease";
+  
 });
+
+// ========== Function Update Note ==========
 
 function editNote(index) {
   isUpdate = true;
@@ -131,11 +134,15 @@ function editNote(index) {
   fillNotesOnThePage();
 }
 
+// ========== Function Delete Note ==========
+
 function deleteNote(index) {
   notes.splice(index, 1);
   storeNote();
   fillNotesOnThePage();
 }
+
+// ========== Function Get Current Date ==========
 
 function getDate() {
   let currentDate = new Date(),
@@ -143,10 +150,6 @@ function getDate() {
     day = currentDate.getDate(),
     year = currentDate.getFullYear();
   return `${month} ${day}, ${year}`;
-}
-
-function randombackgroundColor() {
-  return colors[Math.floor(Math.random() * colors.length)];
 }
 
 // ================ STORAGE FUNCTION ==================

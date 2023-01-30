@@ -109,6 +109,7 @@ body {
     background-color: #1976d2;
 }
 
+/* Media Query */
 @media (max-width: 359px) {
     .wrapper {
         padding: 20px 15px;
