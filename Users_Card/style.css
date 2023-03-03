@@ -1,0 +1,202 @@
+/* Start Global Rules */
+/* Google Fonts Library */
+@import url("https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  font-family: "Mulish", sans-serif;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #f6f8ff;
+  padding: 15px 0;
+}
+
+.card::after,
+.card::before,
+.cricle,
+.cricle img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;  
+}
+
+/* End Global Rules */
+
+.card {
+    width: 380px;
+    max-width: 95%;
+    padding: 65px 25px 40px;
+    background: #ffffff;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    box-shadow: 8px 12px 20px #e9ebf8;
+}
+
+.card::after,
+.card::before {
+    content: "";
+    background-color: #f6f8ff;
+    position: absolute;
+    z-index: -1;
+}
+
+.card::after {
+    width: 175px;
+    height: 175px;
+    top: -30px;
+    right: -104px;
+}
+
+.card::before {
+    width: 110px;
+    height: 110px;
+    top: 290px;
+    left: -60px;
+}
+
+
+.cricle-box {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.cricle {
+    position: relative;
+    width: 185px;
+    height: 185px;
+    border: 3px solid #d1d5e6;
+    margin: 0 auto;
+}
+
+.cricle img {
+    width: 75px;
+    height: 75px;
+    object-fit: cover;
+    object-position: center;
+    border: 8px solid #c4cade;
+    position: absolute;
+    transition: all .5s ease;
+    -webkit-transition: all .5s ease;
+    -moz-transition: all .5s ease;
+    -ms-transition: all .5s ease;
+    -o-transition: all .5s ease;
+    cursor: pointer;
+}
+
+.cricle img:hover {
+    transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    -moz-transform: scale(1.2);
+    -ms-transform: scale(1.2);
+    -o-transform: scale(1.2);
+}
+
+
+.cricle img:first-of-type {
+    top: -30px;
+    left: 55px;
+}
+
+.cricle img:nth-child(2) {
+    top: 35px;
+    left: -32px;
+}
+
+.cricle img:nth-child(3) {
+    bottom: -19px;
+    left: 4px;
+}
+
+.cricle img:nth-child(4) {
+    top: 35px;
+    right: -32px;
+}
+
+.cricle img:last-of-type {
+    bottom: -19px;
+    right: 4px;
+}
+
+.contect {
+    width: 80%;
+    text-align: center;
+    margin: 50px auto 0;
+}
+
+.contect h2 {
+    font-size: 18px;
+    margin-bottom: 12px;
+}
+
+.contect p {
+    margin-bottom: 30px;
+    padding: 0 8px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.contect button {
+  width: 100%;
+  color: #ffffff;
+  background: #6b81ed;
+  text-transform: uppercase;
+  border: none;
+  outline: none;
+  padding: 14px 18px;
+  font-size: 15px;
+  font-weight: 500;
+  cursor: pointer;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
+  transition: all .5s ease-in-out;
+  box-shadow: #e5e9fc 5px 15px 20px;
+}
+
+.contect button:hover {
+   background: transparent;
+   border: 2px solid #6b81ed;
+   color: #6b81ed;
+   transform: scale(0.9);
+   -webkit-transform: scale(0.9);
+   -moz-transform: scale(0.9);
+   -ms-transform: scale(0.9);
+   -o-transform: scale(0.9);
+}
+
+
+@media (max-width: 480px) {
+    
+    .contect {
+        width: 90%;
+    }
+
+    .contect h2 {
+        font-size: 15.2px;
+        font-weight: bold;
+    }
+    
+    .contect p {
+        font-size: 12px;
+        padding: 0;
+        font-weight: bold;
+    } 
+}

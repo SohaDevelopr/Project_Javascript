@@ -1,0 +1,193 @@
+/* Start Global Rules */
+/* Google Fonts Library */
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@200;300;400;500;600;700;800;900&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Mulish', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #191c4f;
+  padding: 15px;
+}
+
+body,
+.card .header,
+.header button ,
+.progress-box,
+.imgs,
+.imgs .img {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* End Global Rules */
+
+.card {
+    width: 430px;
+    height: 300px;
+    color: #ffffff;
+    background-color: #1f245c;
+    padding: 20px 18px;
+    border-top: 5px solid #f70698;
+    border-radius: 24px;
+    -webkit-border-radius: 24px;
+    -moz-border-radius: 24px;
+    -ms-border-radius: 24px;
+    -o-border-radius: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(4,1fr);
+    gap: 10px;
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.card .header,
+.progress-box {
+    justify-content: space-between;
+}
+
+.title p {
+    font-size: 12px;
+    font-weight: 300;
+    margin-top: 2px;
+}
+
+.header button {
+    align-self: start;
+    width: 30px;
+    height: 30px;
+    color: #ffffff;
+    background: transparent;
+    outline: none;
+    border: 2px solid #111447;
+    cursor: pointer;
+    margin-top: 3px;
+}
+
+.header button,
+.imgs .img {
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.text-box p {
+    font-size: 15px;
+    font-weight: 300;
+}
+
+.progress-box .present {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.progress {
+    width: 75%;
+    height: 7px;
+    background-color: #111447;
+    border-radius: 50px;
+    -webkit-border-radius: 50px;
+    -moz-border-radius: 50px;
+    -ms-border-radius: 50px;
+    -o-border-radius: 50px;
+    position: relative;
+    overflow: hidden;
+    margin: 0 8px;
+}
+
+.progress::before {
+    content: "";
+    width: 43%;
+    height: 100%;
+    background: linear-gradient(to right,#08e4c4,#65d2e8);
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}
+
+.imgs {
+    display: flex;
+    justify-content: initial;
+    align-items: initial;
+}
+
+.imgs .img {
+    padding: 3px;
+    margin: 5px;
+    border: 2px solid #111447;
+    position: relative;
+}
+
+.img:hover {
+    transform: scale(1.08);
+    -webkit-transform: scale(1.08);
+    -moz-transform: scale(1.08);
+    -ms-transform: scale(1.08);
+    -o-transform: scale(1.08);
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+.img:hover span ,
+.img:hover::before {
+    display: block;
+}
+
+.img::before {
+    content: "";
+    border-width: 7px;
+    border-style: solid;
+    border-color: #111447 transparent transparent transparent;
+    position: absolute;
+    top: -10px;
+    left: 17px;
+    display: none;
+}
+
+.img span {
+  display: none;
+  width: 68px;
+  background-color: #111447;
+  text-align: center;
+  font-size: 9px;
+  font-weight: 600;
+  padding: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: -32px;
+  left: 50%;
+  transform: translateX(-50%);
+  -webkit-transform: translateX(-50%);
+  -moz-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  -o-transform: translateX(-50%);
+  border-radius: 2px;
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+}
+
+.imgs img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: inherit;
+    -webkit-border-radius: inherit;
+    -moz-border-radius: inherit;
+    -ms-border-radius: inherit;
+    -o-border-radius: inherit;
+}

@@ -1,0 +1,178 @@
+/* Start Global Rules */
+/* Google Fonts Library */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  color: #313f71;
+  background: #f3f8fe;
+  padding: 12px;
+}
+
+body,
+.card,
+.groub-row,
+.row,
+.row i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* End Global Rules */
+
+
+.card {
+  width: 400px;
+  max-width: 98%;
+  justify-content: initial;
+  align-items: flex-start;
+  background: #ffffff;
+  padding: 35px 25px;
+  box-shadow: 0 33px 0 -12px #e6effa;
+  border-radius: 24px;
+  -webkit-border-radius: 24px;
+  -moz-border-radius: 24px;
+  -ms-border-radius: 24px;
+  -o-border-radius: 24px;
+}
+
+.image {
+  margin-right: 18px;
+}
+
+.image img {
+  width: 95px;
+  height: 95px;
+  object-fit: cover;
+  object-position: top;
+  border: 8px solid #e6effa;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  transition: all 0.8s;
+  -webkit-transition: all 0.8s;
+  -moz-transition: all 0.8s;
+  -ms-transition: all 0.8s;
+  -o-transition: all 0.8s;
+  cursor: pointer;
+}
+
+.image:hover img {
+  border-width: 6px;
+}
+
+.image:hover img,
+.profile button:hover {
+  border-color: #313f71;
+  transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -ms-transform: scale(1.1);
+  -o-transform: scale(1.1);
+}
+
+.title {
+  margin: 5px 0 12px;
+}
+
+.title span {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.groub-row {
+  flex-direction: column;
+  justify-content: initial;
+  align-items: initial;
+}
+
+
+.row {
+  justify-content: initial;
+  margin-bottom: 6px;
+}
+
+.row i {
+  width: 24px;
+  height: 24px;
+}
+
+.row p {
+  font-size: 12px;
+  font-weight: 600;
+  margin-left: 5px;
+}
+
+.profile p:not(.row p) {
+  font-size: 13px;
+  line-height: 1.6;
+  font-weight: 500;
+  margin: 15px 0;
+}
+
+.profile button {
+  padding: 5px 8px;
+  margin-top: 15px;
+  outline: none;
+  color: inherit;
+  font-weight: 500;
+  cursor: pointer;
+  background: transparent;
+  border: 2px solid #c4cadf;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  transition: 0.3;
+  -webkit-transition: 0.3;
+  -moz-transition: 0.3;
+  -ms-transition: 0.3;
+  -o-transition: 0.3;
+}
+
+.profile button:hover {
+   font-size: 12px;
+   padding: 5px 15px;
+   box-shadow: rgba(49, 63, 113, 0.15) 1.95px 4px 2.6px;
+}
+
+/* Media Query */
+
+@media (max-width: 540px) {
+  .card,
+  .groub-row {
+    justify-content: center;
+    align-items: center;
+  }
+
+  .card,
+  .row {
+    flex-direction: column;
+  }
+
+  .card {
+    text-align: center;
+  }
+
+  .groub-row {
+    flex-direction: row;
+  }
+
+  .row {
+    flex: 1;
+  }
+}
