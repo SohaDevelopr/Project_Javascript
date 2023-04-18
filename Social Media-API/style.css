@@ -1,0 +1,165 @@
+:root {
+  --white: #ffffff;
+  --grey: #fafaff;
+}
+
+body {
+  overflow-y: scroll;
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+body::-webkit-scrollbar {
+  width: 11px;
+}
+
+body::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: #c1c1c1;
+}
+
+body:-webkit-scrollbar-thumb:hover {
+  background: #9e9e9e;
+}
+
+img:not(.card-body img) {
+  border: 3px solid #e0e0e0 !important;
+}
+
+.bg-grey {
+  background-color: var(--grey);
+}
+.bg-light {
+  background-color: var(--white) !important;
+}
+.navbar {
+  min-height: 4rem;
+}
+
+.navbar-toggler:focus {
+  box-shadow: none;
+  border-color: black;
+}
+
+.dropdown-menu[data-bs-popper] {
+  left: -165px;
+}
+
+.dropdown-toggle::after {
+  display: none;
+}
+
+.nav-link span {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.form-control:focus {
+  box-shadow: none;
+  border-color: black;
+}
+
+.dropdown-item:focus {
+  background-color: #e4e6e7 !important;
+}
+
+.dropdown-item:hover span,
+.dropdown-item:hover i,
+.dropdown-item:hover {
+  color: var(--bs-light-text) !important;
+}
+
+#logout-li a:hover span,
+#logout-li a:hover i,
+.delete:hover {
+  color: #d82121 !important;
+}
+
+.dropdown-item span {
+  font-size: 15px;
+}
+
+.nav-link i,
+.nav-link img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.followed {
+  /* border-color:#d82121!important; */
+  color: #d82121 !important;
+}
+
+#img,
+#comments img {
+  width: 35px;
+  height: 35px;
+}
+
+#userInfo img {
+  width: 55px;
+  height: 55px;
+}
+
+.card {
+  border-color: #e0e0e0 !important;
+}
+
+.card-header {
+  padding-top: 10px !important;
+}
+
+@media (max-width: 370px) {
+  #user-image {
+    margin-bottom: 12px;
+  }
+
+  .user-info {
+    padding: 0 20px;
+  }
+}
+
+@media (max-width: 990px) {
+  .d-sm-none {
+    display: none;
+  }
+
+  .order-sm-1 {
+    order: 1;
+  }
+
+  .order-sm-2 {
+    order: 2;
+  }
+
+  .row h1 {
+    margin: 8px 0 !important;
+  }
+
+  .nav-link {
+    padding: var(--bs-nav-link-padding-y) var(--bs-nav-link-padding-x) !important;
+  }
+
+  .navbar-nav {
+    margin-top: 25px;
+  }
+
+  #user-image {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (min-width: 900px) {
+  .dropdown-menu.post-menu {
+    transform: translate3d(-128.5px, 45.5px, 0px) !important;
+    -webkit-transform: translate3d(-128.5px, 45.5px, 0px) !important;
+    -moz-transform: translate3d(-128.5px, 45.5px, 0px) !important;
+    -ms-transform: translate3d(-128.5px, 45.5px, 0px) !important;
+    -o-transform: translate3d(-128.5px, 45.5px, 0px) !important;
+  }
+}
