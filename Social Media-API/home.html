@@ -5,14 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <link rel="icon" href="https://p7.hiclipart.com/preview/173/259/723/social-media-number-sign-hashtag-symbol-tags-thumbnail.jpg">
+    <link rel="icon" href="https://creazilla-store.fra1.digitaloceanspaces.com/icons/3432558/shutter-icon-md.png">
 
     <!-- IMPORT SCRIPTS & STYLES -->
-    <!-- <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css"/>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.min.js"></script>
-    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script> -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     
     <!-- AXIOS Library -->
     <script src="./node_modules/axios/dist/axios.min.js"></script>
@@ -33,16 +30,26 @@
 
     <!-- Style CSS -->
     <link rel="stylesheet" href="style.css">
-    <title>Hashtag</title>
+    <title>Photogram \ Home</title>
   </head>
 
-  <body class="bg-white" style="font-family: 'Poppins', sans-serif;">
+  <body class="min-vh-100" style="font-family: 'Poppins', sans-serif;" data-bs-theme="light" id="home-body">
+   <!-- ======== INTRODUCTION ======== -->
+   <div class="intro">
+      <h1 class="logo-header">
+        <span class="logo"><i class="material-icons-outlined" style="margin-right: 3px; font-size: 45px;">camera</i></span>
+        <span class="logo" style="font-family: 'Lobster', cursive;">Photogram</span>
+      </h1>
+   </div>
+   <!-- // ======== INTRODUCTION ======== // -->
+
    <!-- ======== NAVBAR ======== -->
-   <nav class="navbar navbar-expand-lg bg-light border-bottom">
+   <nav class="navbar navbar-expand-lg border-bottom" style="background-color: inherit;">
     <div class="container d-flex justify-content-between align-items-center">
 
-      <a class="navbar-brand d-flex align-items-center fs-4" href="#" style="font-family: 'Lobster', cursive;">
-        <i class="fa-solid fa-hashtag" style="margin-right: 4px;"></i>Hashtag
+      <a class="navbar-brand fs-4 d-flex justify-content-center align-items-center" href="home.html">
+          <span class=""><i class="material-icons-outlined d-flex justify-content-center align-items-center" style="margin-right: 3px; font-size: 28px;">camera</i></span>
+          <span class="" style="font-family: 'Lobster', cursive;">Photogram</span>
       </a>
 
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -54,34 +61,33 @@
         <ul class="navbar-nav ml-auto mb-2 mb-lg-0">
           <li class="nav-item my-sm-2 my-lg-0">
             <a class="nav-link d-flex align-items-center active" href="home.html">
-              <i class="material-icons text-dark">home</i><span class="d-lg-none text-dark ms-2">Home</span>
+              <i class="material-icons">home</i><span class="d-lg-none ms-2">Home</span>
             </a>
           </li>
 
           <li class="nav-item my-sm-2 my-lg-0">
             <a class="nav-link d-flex align-items-center mx-lg-1" href="#">
-              <i class="material-icons-outlined text-dark">notifications</i><span class="d-lg-none text-dark ms-2">Notifications</span>
+              <i class="material-icons-outlined">notifications</i><span class="d-lg-none ms-2">Notifications</span>
             </a>
           </li>
 
           <li class="nav-item my-sm-2 my-lg-0">
-            <a class="nav-link d-flex align-items-center" href="profile.html" style="padding-top: 3px;">
+            <a class="nav-link d-flex align-items-center" href="#" style="padding-top: 3px;" onclick="profileClicked()">
               <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" id="img" class="rounded-circle object-fit-cover">
-              <span class="d-lg-none text-dark ms-2">Profile</span>
+              <span class="d-lg-none ms-2">Profile</span>
             </a>
           </li>
 
           <li class="nav-item dropdown my-sm-2 my-lg-0">
             <a class="nav-link dropdown-toggle d-flex align-items-center px-0" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-              <i class="material-icons me-2 text-dark">expand_more</i><span class="d-lg-none text-dark">More</span>
+              <i class="material-icons me-2">expand_more</i><span class="d-lg-none">More</span>
             </a>
             <ul class="dropdown-menu">
-              <li><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span class="text-dark">Switch appearance</span><i class="material-icons-outlined ms-3 text-dark">light_mode</i></a></li>
-              <li class="d-none"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span class="text-dark">Settings</span><i class="material-icons-outlined ms-3 text-dark">settings</i></a></li>
+              <li onclick="changeMode()"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span>Switch appearance</span><i class="material-icons-outlined ms-3 icon-mode">light_mode</i></a></li>
               <li><hr class="dropdown-divider"></li>
-              <li data-bs-toggle="modal" data-bs-target="#login-modal" id="login-li"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span class="text-dark">Login</span><i class="material-icons ms-3 text-dark">login</i></a></li>
-              <li data-bs-toggle="modal" data-bs-target="#register-modal" id="register-li"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span class="text-dark">Register</span><i class="material-icons ms-3 text-dark">input</i></a></li>
-              <li id="logout-li" style="display: none;" onclick="logout()"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span class="text-dark">Logout</span><i class="material-icons ms-3 text-dark">logout</i></a></li>
+              <li data-bs-toggle="modal" data-bs-target="#login-modal" id="login-li"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span>Login</span><i class="material-icons ms-3">login</i></a></li>
+              <li data-bs-toggle="modal" data-bs-target="#register-modal" id="register-li"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span>Register</span><i class="material-icons ms-3">input</i></a></li>
+              <li id="logout-li" style="display: none;" onclick="logout()"><a class="dropdown-item d-flex align-items-center justify-content-between" href="#"><span>Logout</span><i class="material-icons ms-3">logout</i></a></li>
             </ul>
           </li>
         </ul>
@@ -90,9 +96,19 @@
    </nav>
    <!-- // ======== NAVBAR ======== // -->
 
+   <!-- ======== LOADER ======== -->
+   <div id="loader" class="d-flex justify-content-center align-items-center" style="position: fixed; top: 0; 
+   bottom: 0; left: 0; right: 0; margin: auto; z-index: 999;">
+    <div class="loadingio-spinner-spinner-we8eikvyd6i"><div class="ldio-qkk4y8xh0w">
+      <div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
+      </div>
+    </div>
+   </div>
+   <!-- // ======== LOADER ======== // -->   
+
    <!--  ======== ALERT ======== -->
    <div id="success-alert" class="show fade" style="width: 35%; height: 50px; z-index: 10000000; position: fixed; 
-   right: 8px; bottom: 20px; background-color: transparent; cursor: pointer; display: none;"></div>
+    right: 8px; bottom: 20px; background-color: transparent; cursor: pointer; display: none;"></div>
    <!-- // ======== ALERT ======== // -->
 
    <!-- ======== MODAL ======== -->
@@ -112,7 +128,7 @@
               </div>
               <div class="mb-3">
                 <label for="password-input" class="col-form-label">Password :</label>
-                <input class="form-control" id="password-input" type="password">
+                <input class="form-control password-input" id="password-input" type="password">
                 <div class="d-flex mt-3">
                   <input type="checkbox" onclick="showPassword()">
                   <p class="mb-0 ms-2" style="font-size: 14px;">Show Password</p>
@@ -156,7 +172,7 @@
                 </div>
                 <div class="mb-3">
                   <label for="register-password-input" class="col-form-label">Password :</label>
-                  <input class="form-control" id="register-password-input" type="password">
+                  <input class="form-control password-input" id="register-password-input" type="password">
                   <div class="d-flex mt-3">
                     <input type="checkbox" onclick="showPassword()">
                     <p class="mb-0 ms-2" style="font-size: 14px;">Show Password</p>
@@ -228,18 +244,18 @@
     <!-- // DELETE POST MODAL // --> 
    <!-- //  ======== MODAL ======== // -->
 
-   <!--  ======== ADD POST BUTTON ======== -->
-   <div class="bg-dark text-white justify-content-center align-items-center" id="add-btn" onclick="addBtnClicked()"style="width: 50px;
-    height: 50px; z-index: 100000; position: fixed; right: 20px; bottom: 20px; border-radius: 50%; font-size: 25px; cursor: pointer;">
-    <i class="fa-solid fa-plus"></i>
-   </div>
-   <!-- //  ======== ADD POST BUTTON ======== // -->
+    <!--  ======== ADD POST BUTTON ======== -->
+    <div class="bg-dark justify-content-center align-items-center" id="add-btn" onclick="addBtnClicked()"style="width: 50px;
+    height: 50px; z-index: 100000; position: fixed; right: 20px; bottom: 20px; border-radius: 50%; font-size: 25px; cursor: pointer; color:inherit;">
+      <i class="fa-solid fa-plus"></i>
+    </div>
+    <!-- //  ======== ADD POST BUTTON ======== // -->
 
    <!--  ======== SECTION ======== -->
    <section class="py-3">
      <div class="container mb-3">
        <div class="row justify-content-between">
-        <h1 class="mb-0 fs-2">Home</h1>
+        <!-- <h1 class="mb-0 fs-2">Home</h1> -->
           <!--  -->
           <div class="col-lg-8 mt-4 order-sm-2 order-lg-1">
               <!-- POSTS -->
@@ -251,27 +267,27 @@
           </div>
           <!--  -->
 
-          <div class="col-lg-4 order-sm-1 order-lg-2">
+          <div class="col-lg-4 order-sm-1 order-lg-2 px-0">
             <!-- Account Info --> 
-             <div class="d-flex align-items-center justify-content-between my-3" id="userInfo">
+             <div class="d-flex align-items-center justify-content-between px-2" id="userInfo">
              </div>
 
             <div class=" d-lg-block d-sm-none mt-4 border" style="border-radius: 0.375rem;">
               <!-- d-flex align-items-center justify-content-between -->
-                <div class="border-bottom" style="background-color: #f8f8f8; padding: 15px;">
-                  <div class="text-secondary">Last Activity</div>
-                  <!-- <button class="btn d-flex justify-content-end fs-6 text-dark">See All</button> -->
+              <div class="card border-0">
+                <div class="card-header" style="padding: 18px !important;">
+                  <div style="color:inherit;">Last Activity</div>
                 </div>
                 <!-- USERS -->
-                <div class="" id="users" style="padding: 15px;">
-                   <!-- USER -->
-                   <!-- // USER  // --> 
+                <div class="card-body" id="users" style="padding: 10px;">
+                  <!-- USER -->
+                  <!-- // USER  // --> 
                 </div>
-                 <!-- // USERS  // -->
-            </shadow>
+                <!-- // USERS  // -->
+              </div>
+            </div>
 
           </div>
-
        </div>
        <!-- // ROW // -->
      </div>

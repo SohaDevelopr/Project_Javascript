@@ -1,11 +1,13 @@
 // ==== BASE URL ====
-const baseUrl = 'https://tarmeezacademy.com/api/v1';
+const baseUrl = "https://tarmeezacademy.com/api/v1";
+const img_src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT19eLyqRHQDO-VnXj1HhzL_9q8yHF-3ewIhA&usqp=CAU";
 setupUI();
+
 // ==== FUNCTION SETUP UI ====
 function setupUI() {
   let userInfo = document.getElementById("userInfo");
   const token = localStorage.getItem("token");
-  console.log(token)
+  console.log(token);
   let user = getCurrentUser();
   const loginLi = document.getElementById("login-li");
   const registerLi = document.getElementById("register-li");
@@ -22,9 +24,10 @@ function setupUI() {
     if (addCommentDiv != null) {
       addCommentDiv.style.display = "none";
     }
-    document.getElementById("img").src = "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png";
-    if(userInfo != null){
+    document.getElementById("img").src = img_src;
+    if (userInfo != null) {
       userInfo.innerHTML = "";
+      userInfo.classList.remove("my-3");
     }
   } //token is guest (notlogged in)
   else {
@@ -37,25 +40,23 @@ function setupUI() {
     if (addCommentDiv != null) {
       addCommentDiv.style.display = "flex";
     }
-    let isString = (typeof user.profile_image === "string" || user.profile_image instanceof String);
-    document.getElementById("img").src = isString? user.profile_image : "https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png";
-    console.log("image src is string? ", isString);
-    let content = 
-      `
-              <div class="d-flex align-items-center">
+    document.getElementById("img").src = checkSrcImageIsString(user.profile_image, user.profile_image)? user.profile_image : img_src;
+    //  console.log("image src is string? ",checkSrcImageIsString(user.profile_image, user.profile_image));
+    let content = `
+              <div class="d-flex align-items-center" style="cursor: pointer;" onClick="profileClicked()">
                 ${
-                  isString
+                  checkSrcImageIsString(user.profile_image, user.profile_image)
                     ? `
-                  <img src="${user.profile_image}" alt="" width="40px" height="40px" class="rounded-circle object-fit-cover">
+                  <img src="${user.profile_image}" alt=""  class="rounded-circle object-fit-cover">
                   `
                     : `
-                  <img src="https://cdn.pixabay.com/photo/2015/10/05/22/37/blank-profile-picture-973460__340.png" alt="" class="rounded-circle object-fit-cover">
+                  <img src="${img_src}" alt="" class="rounded-circle object-fit-cover">
                   `
                 }
                 <div class="d-flex flex-column mx-3">
-                  <a href="#" class="fw-bold mb-0 text-decoration-none text-dark">${
-                    user.name
-                  }</a>
+                  <a href="#" class="fw-bold mb-0 text-decoration-none" style="color: inherit;">
+                  ${user.name}
+                  </a>
                   <small>@${user.username}</small>
                 </div>
               </div>
@@ -64,13 +65,17 @@ function setupUI() {
                   Switch
                 </button>
                 <ul class="dropdown-menu">
-                  <li id="new-account"><a class="dropdown-item" href="#">Add a new account</a></li>
-                  <li id="exist-account"><a class="dropdown-item" href="#">Add an existing account</a></li>
+                  <li id="new-account"><a class="dropdown-item" href="#" onClick="newAccount()">Add a new account</a></li>
+                  <li id="exist-account"><a class="dropdown-item" href="#" onClick="exitingAccount()">Add an existing account</a></li>
                 </ul>
               </div>
-      `;
-    if(userInfo != null){
-        userInfo.innerHTML = content;
+      
+    
+    
+             `;
+    if (userInfo != null) {
+      userInfo.innerHTML = content;
+      userInfo.classList.add("my-3");
     }
   }
 }
@@ -82,11 +87,13 @@ function loginBtnClicked() {
   let closeBtn = document.getElementById("closeBtn");
   console.log(username, password);
   const params = {
-   "username": username,
-   "password": password
+    username: username,
+    password: password,
   };
   const url = `${baseUrl}/login`;
-  axios.post(url, params)
+  toggleLoader(true);
+  axios
+    .post(url, params)
     .then(function (response) {
       console.log(response.data);
       localStorage.setItem("token", response.data.token);
@@ -100,6 +107,9 @@ function loginBtnClicked() {
     .catch((error) => {
       const message = error.response.data.message;
       showAlert(message, "danger");
+    })
+    .finally(() => {
+      toggleLoader(false);
     });
 }
 
@@ -123,6 +133,8 @@ function registerBtnClicked() {
     "Content-Type": "multipart/form-data",
   };
 
+  toggleLoader(true);
+
   axios
     .post(url, formDate, {
       headers: headers,
@@ -138,6 +150,9 @@ function registerBtnClicked() {
     .catch((error) => {
       const message = error.response.data.message;
       showAlert(message, "danger");
+    })
+    .finally(() => {
+      toggleLoader(false);
     });
 }
 
@@ -150,111 +165,140 @@ function logout() {
 }
 
 // ==== FUNCTION CREATE NEW POST ====
-function createNewPostClicked() {
-  let postId = document.getElementById("post-id-input").value;
-  let isCreate = postId == null || postId == "";
-  console.log(postId)
+// function createNewPostClicked() {
+//   let postId = document.getElementById("post-id-input").value;
+//   let isCreate = postId == null || postId == "";
+//   console.log(postId);
 
-  let title = document.getElementById("post-title-input").value;
-  let body = document.getElementById("post-body-input").value;
-  let image = document.getElementById("post-image-input").files[0];
+//   let title = document.getElementById("post-title-input").value;
+//   let body = document.getElementById("post-body-input").value;
+//   let image = document.getElementById("post-image-input").files[0];
 
-  let formDate =  new FormData();
-  formDate.append("title",title);
-  formDate.append("body",body);
-  formDate.append("image",image);
+//   let formDate = new FormData();
+//   formDate.append("title", title);
+//   formDate.append("body", body);
+//   formDate.append("image", image);
 
-  let url = ``;
-  let msg = "";
-  const token = localStorage.getItem("token");
-  const headers = {
-    "Content-Type": "multipart/form-data",
-    "authorization": `Bearer ${token}`
-  }
+//   let url = ``;
+//   let msg = "";
+//   const token = localStorage.getItem("token");
+//   const headers = {
+//     "Content-Type": "multipart/form-data",
+//     authorization: `Bearer ${token}`,
+//   };
 
-  if(isCreate) {
-    url = `${baseUrl}/posts`;
-    msg = "New Post Has Been Created Successfully";
-  }else {
-    formDate.append("_method","put");
-    url = `${baseUrl}/posts/${postId}`;
-    msg = "The Post Has Been Updated Successfully";
-  } 
+//   if (isCreate) {
+//     url = `${baseUrl}/posts`;
+//     msg = "New Post Has Been Created Successfully";
+//   } else {
+//     formDate.append("_method", "put");
+//     url = `${baseUrl}/posts/${postId}`;
+//     msg = "The Post Has Been Updated Successfully";
+//   }
 
-  axios.post(url,formDate,{
-    headers: headers
-  })
-  .then(function (response) {
-    console.log(response.data);
-    const modal = document.getElementById("create-post-modal");
-    const modalInstance = bootstrap.Modal.getInstance(modal);
-    modalInstance.hide();
-    showAlert(msg,'success');
-    getPosts();
-    getUsers();
+//   toggleLoader(true);
 
-  }).catch((error)=> {
-    const message = error.response.data.message;
-    showAlert(message,'danger');
-    console.log(message)
-  }) 
-}
+//   axios.post(url, formDate, {
+//       headers: headers,
+//     })
+//     .then(function (response) {
+//       console.log(response.data);
+//       const post = response.data;
+//       const modal = document.getElementById("create-post-modal");
+//       const modalInstance = bootstrap.Modal.getInstance(modal);
+//       modalInstance.hide();
+//       showAlert(msg, "success");
+//       getPosts();
+//       getUsers();
+//       getUserPosts();
+//       getUser();
+//     })
+//     .catch((error) => {
+//       const message = error.response.data.message;
+//       showAlert(message, "danger");
+//       console.log(message);
+//     })
+//     .finally(() => {
+//       toggleLoader(false);
+//     });
+// }
 
 // ==== FUNCTION EDIT POST BTN ON CLICKED ====
 function editPostBtnClicked(postObject) {
   let post = JSON.parse(decodeURIComponent(postObject));
   console.log(post);
   document.getElementById("post-id-input").value = post.id;
-  document.getElementById("post-modal-title").innerHTML = "Edit Post"; 
+  document.getElementById("post-modal-title").innerHTML = "Edit Post";
   document.getElementById("post-modal-submit-btn").innerHTML = "Update";
   document.getElementById("post-image-input").files[0] = post.image;
-  let postModal = new bootstrap.Modal(document.getElementById("create-post-modal"),{});
+  let postModal = new bootstrap.Modal(
+    document.getElementById("create-post-modal"),
+    {}
+  );
   postModal.toggle();
   document.getElementById("post-title-input").value = post.title;
   document.getElementById("post-body-input").value = post.body;
 }
-
 
 // ==== FUNCTION DELETE POST BTN ON CLICKED ====
 function deletePostBtnClicked(postObject) {
   let post = JSON.parse(decodeURIComponent(postObject));
   console.log(post);
   document.getElementById("delete-post-id-input").value = post.id;
-  let postModal = new bootstrap.Modal(document.getElementById("delete-post-modal"),{});
+  let postModal = new bootstrap.Modal(
+    document.getElementById("delete-post-modal"),
+    {}
+  );
   postModal.toggle();
 }
 
 // ==== FUNCTION CONFIRM POST DELETE ====
-function confirmPostDelete() {
-  const postId = document.getElementById("delete-post-id-input").value ;
-  const url = `${baseUrl}/posts/${postId}`;
-  const token = localStorage.getItem("token");
-  const headers = {
-    "authorization": `Bearer ${token}`
-  }
-  axios.delete(url,{
-    headers: headers
-  })
-  .then(function (response) {
-    console.log(response);
-    const modal =  document.getElementById("delete-post-modal");    
-    const modalInstance = bootstrap.Modal.getInstance(modal);
-    modalInstance.hide();
-    showAlert("The Post Has Been Deleted Successfully",'success');
-    getPosts();
-    getUsers();
-  })
-  .catch((error) => {
-    const message = error.response.data.message;
-    showAlert(message, "danger");
-  });
+// function confirmPostDelete() {
+//   const postId = document.getElementById("delete-post-id-input").value;
+//   const url = `${baseUrl}/posts/${postId}`;
+//   const token = localStorage.getItem("token");
+//   const headers = {
+//     authorization: `Bearer ${token}`,
+//   };
+//   axios.delete(url, {
+//       headers: headers,
+//     })
+//     .then(function (response) {
+//       console.log(response);
+//       const modal = document.getElementById("delete-post-modal");
+//       const modalInstance = bootstrap.Modal.getInstance(modal);
+//       modalInstance.hide();
+//       showAlert("The Post Has Been Deleted Successfully", "success");
+//       getPosts();
+//       getUsers();
+//       getUserPosts();
+//       getUser();
+//     })
+//     .catch((error) => {
+//       const message = error.response.data.message;
+//       showAlert(message, "danger");
+//     });
+// }
+
+// ==== FUNCTION ADD BTN CLICKED ====
+function addBtnClicked() {
+  document.getElementById("post-id-input").value = "";
+  document.getElementById("post-modal-title").innerHTML = "Create A New Post";
+  document.getElementById("post-modal-submit-btn").innerHTML = "Create";
+  document.getElementById("post-title-input").value = "";
+  document.getElementById("post-body-input").value = "";
+  let postModal = new bootstrap.Modal(
+    document.getElementById("create-post-modal"),
+    {}
+  );
+  postModal.toggle();
 }
 
 // ==== FUNCTION SHOW ALERT ====
-function showAlert(customMessage, type) {
+function showAlert(customMessage, type = "success") {
   const successAlert = document.getElementById("success-alert");
   const alert = (message, type) => {
-    console.log(message)
+    console.log(message);
     const wrapper = document.createElement("div");
     wrapper.innerHTML = [
       `<div class="alert alert-${type} alert-dismissible" role="alert">`,
@@ -267,9 +311,12 @@ function showAlert(customMessage, type) {
   };
 
   alert(customMessage, type);
-  document.querySelector("#success-alert").style.display = "block";
+    successAlert.style.display = "block";
   setTimeout(() => {
-    document.querySelector("#success-alert").style.display = "none";
+    successAlert.style.display = "none";
+    successAlert.textContent = "";
+    // console.log(successAlert.textContent);
+    
   }, 3000);
 }
 
@@ -279,7 +326,7 @@ function getCurrentUser() {
   const storageUser = localStorage.getItem("currentUser");
   if (storageUser != null) {
     user = JSON.parse(storageUser);
-    console.log(user)
+    console.log(user);
   }
 
   return user;
@@ -287,11 +334,99 @@ function getCurrentUser() {
 
 // ==== FUNCTION SHOW PASSWORD ====
 function showPassword() {
-  let password = document.getElementById("password-input");
-  if (password.type === "password") {
-    password.type = "text";
+  let password = document.querySelectorAll(".password-input");
+  if (password[0].type === "password") {
+    password[0].type = "text";
   } else {
-    password.type = "password";
+    password[0].type = "password";
+  }
+  if (password[1].type === "password") {
+    password[1].type = "text";
+  } else {
+    password[1].type = "password";
+  }
+
+}
+
+// ==== FUNCTION POST CLICKED ====
+function postClicked(postId) {
+  window.location = `postDetails.html?postId=${postId}`;
+}
+
+// ==== FUNCTION USER CLICKED ====
+function userClicked(userId) {
+  window.location = `profile.html?userId=${userId}`;
+}
+
+// ==== FUNCTION PROFILE CLICKED ====
+function profileClicked() {
+  const currentUser = getCurrentUser();
+  if(currentUser != null)
+  window.location = `profile.html?userId=${currentUser.id}`;
+}
+
+// ==== FUNCTION CHECK SRC IMAGE IS STRING ====
+function checkSrcImageIsString(value1, value2) {
+  let result = typeof value1 === "string" || value2 instanceof String;
+  return result;
+}
+
+// ==== FUNCTION LOADER ====
+function toggleLoader(show = true) {
+  if (show) {
+    document.getElementById("loader").style.visibility = "visible";
+  } else {
+    document.getElementById("loader").style.visibility = "hidden";
   }
 }
 
+function btnAddClicked() {
+  let addBtn = document.getElementById("add-btn");
+  addBtn.click();
+}
+
+// ==== DARK MODE FUNCTIONS ====
+let darkMode = localStorage.getItem("dark-mode");
+let btnAdd = document.getElementById("add-btn");
+console.log(btnAdd);
+console.log(darkMode);
+
+const themeLight = () => {
+  document.body.setAttribute("data-bs-theme", "light");
+  localStorage.setItem("dark-mode", "light");
+  document.querySelector(".icon-mode").textContent = "light_mode";
+
+  if (btnAdd != null) {
+    btnAdd.classList.add("bg-dark");
+    btnAdd.classList.remove("bg-gray-dark");
+    console.log("yes");
+  }
+};
+
+const themeDark = () => {
+  document.body.setAttribute("data-bs-theme", "dark");
+  localStorage.setItem("dark-mode", "dark");
+  document.querySelector(".icon-mode").textContent = "dark_mode";
+
+  if (btnAdd != null) {
+    btnAdd.classList.add("bg-gray-dark");
+    btnAdd.classList.remove("bg-dark");
+    console.log("yes");
+  }
+};
+
+// set state of darkMode on page load
+if (darkMode === "light") {
+  themeLight();
+} else {
+  themeDark();
+}
+
+const changeMode = () => {
+  darkMode = localStorage.getItem("dark-mode"); // update darkMode when clicked
+  if (darkMode === "light") {
+    themeDark();
+  } else {
+    themeLight();
+  }
+};
