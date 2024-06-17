@@ -1,0 +1,326 @@
+/* Start Global Rules */
+/* Google Fonts Library */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  list-style: none;
+  font-family: "Poppins", sans-serif;
+}
+
+body {
+  min-height: 100vh;
+}
+
+button,
+input,
+textarea {
+  border: none;
+  outline: none;
+}
+
+/* End Global Rules */
+
+/* Start Wrapper */
+.wrapper {
+  position: relative;
+}
+
+.wrapper header {
+  margin: 25px 50px;
+}
+
+.wrapper header h1 {
+  font-size: 46px;
+}
+
+.add-box {
+  position: fixed;
+  bottom: 25px;
+  left: 30px;
+  z-index: 1;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+}
+
+.add-box:hover {
+  transform: translateY(-10px);
+  -webkit-transform: translateY(-10px);
+  -moz-transform: translateY(-10px);
+  -ms-transform: translateY(-10px);
+  -o-transform: translateY(-10px);
+}
+
+
+#btn-add {
+  width: 55px;
+  height: 55px;
+  border-radius: 50%;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+  background-color: #2B2B28;
+  cursor: pointer;
+}
+
+#btn-add i {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   font-size: 25px;
+   color: white;
+}
+
+
+.wrapper .contect {
+  margin: 30px 50px 85px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(265px,1fr));
+  gap: 15px;
+
+}
+
+/* Start Note */
+
+.note {
+  height: 250px;
+  background-color: #FCE38A;
+  padding: 15px 20px 20px;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.note p {
+  font-size: 22px;
+  font-weight: 500;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.note span {
+  display: block;
+  color: #000;
+  font-size: 15px;
+}
+
+.details span {
+  width: 100%;
+  max-height: 140px;
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+  margin-top: 5px;
+}
+
+.note .bottom-contect,
+.popup-contect header,
+.popup {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.bottom-contect .settings button {
+    color: #2B2B28;
+    background-color: transparent;
+    cursor: pointer;
+}
+
+.bottom-contect .settings button:hover {
+  opacity: 0.8;
+}
+
+.settings button i {
+  font-size: 16px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.settings button i:first-of-type {
+  margin-right: 10px;
+}
+
+/* End Wrapper */
+
+/* Start Popup Box */
+
+.popup-box {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 2;
+  display: none;
+}
+
+.popup {
+  width: 100%;
+  max-width: 400px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  -webkit-transform: translate(-50%,-50%);
+  -moz-transform: translate(-50%,-50%);
+  -ms-transform: translate(-50%,-50%);
+  -o-transform: translate(-50%,-50%);
+  justify-content: center;
+  z-index: 3;
+}
+
+.popup-contect {
+  width: calc(100% - 15px);
+  background-color: #fff;
+  border-radius: 12px;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  animation: anime .3s ease;
+  -webkit-animation: anime .3s ease;
+}
+
+.popup-contect header {
+  border-bottom: 1px solid #ccc;
+  padding: 15px 25px;
+}
+
+.popup-contect header p {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.popup-contect header i {
+  color: #8b8989;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.popup-contect header i:hover {
+  opacity: 0.6;
+}
+
+.popup-contect form {
+  margin: 15px 25px 35px;
+  font-size: 15px;
+  font-weight: 500;
+}
+
+.popup-contect form .row {
+  margin: 15px 0;
+}
+
+.popup-contect form :where(input, textarea) {
+  width: 100%;
+  height: 40px;
+  padding: 3px 10px;
+  background-color: #eee;
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+  margin-top: 5px;
+}
+
+.popup-contect form textarea {
+  height: 140px;
+  resize: none;
+}
+
+.popup-contect form input:focus,
+.popup-contect form textarea:focus {
+  border: 1.5px solid #2B2B28;
+}
+
+.popup-contect button {
+  width: 100%;
+  height: 50px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color: #2B2B28;
+  color: #fff;
+  cursor: pointer;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-top: 15px;
+}
+
+/* End Popup Box */
+
+/* Media query */
+
+/* Small */
+
+@media (max-width: 359px) {
+  .add-box {
+    left: 12px;
+  } 
+  
+  .wrapper header {
+    margin: 30px;
+  }
+
+  .wrapper .contect {
+    margin: 15px 15px 30px;
+    margin-bottom: 70px;
+    grid-template-columns: 1fr;
+  }
+
+  .note {
+    height: fit-content;
+  }
+}
+
+/* Medium */
+
+@media (min-width: 360px) and (max-width: 768px) {
+  .add-box {
+    left: 25px;
+  } 
+  
+  .wrapper header,
+  .wrapper .contect  {
+    margin: 30px;
+  }
+
+  .wrapper .contect {
+    margin-bottom: 85px;
+  }
+
+}
+
+/* Animation */
+@keyframes anime {
+  0% {
+    transform:scale(0);
+    opacity: 0;
+}
+  100% {
+    transform: scale(1);
+    opacity: 1;
+}
+}
+

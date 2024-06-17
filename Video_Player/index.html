@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Player</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Icons Library -->
+    <link href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp" rel="stylesheet">
+</head>
+<body>
+    <div class="container show-controls">
+        <div class="wrapper">
+            <div class="header">
+                <h3 class="title">Zootopia - <span>Disney 2016 HD</span></h3>
+                <div class="settings">
+                    <i class="material-icons">settings</i>
+                </div>
+            </div>
+            <div class="video-timeline">
+                <div class="play">
+                    <button class="play-btn"><i class="material-icons">play_arrow</i></button>
+                </div>
+                <div class="progress-area">
+                    <div class="progress-bar">
+                        <div class="progress"></div>
+                    </div>
+                    <div class="timer">
+                        <span class="current-time">0:00</span>
+                        <span class="separator">/</span>
+                        <span class="video-duration">0:00</span>
+                    </div>
+                </div>
+
+                <div class="video-controls">
+                    <button class="volume"><i class="material-icons">volume_up</i></button>
+                    <button class=""><i class="material-icons">hd</i></button>
+                    <button class="fullscreen"><i class="material-icons">fullscreen</i></button>
+                </div>
+
+            </div>
+        </div>
+        <video id="video">
+            <source src="https://github.com/SohaDevelopr/Projects_Javascript/blob/main/empty_file/video.mp4?raw=true" type="video/mp4">
+        </video>
+    </div>
+    <script src="main.js"></script>
+</body>
+</html>

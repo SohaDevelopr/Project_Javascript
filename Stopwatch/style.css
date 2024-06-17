@@ -1,0 +1,139 @@
+/* Google Fonts Library */
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@100;200;300;400;500;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto Mono", monospace;
+}
+
+body {
+  overflow-x: hidden;
+  overflow-y: scroll;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: auto;
+}
+
+.timeDisplay {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 75px;
+  margin-bottom: 50px;
+}
+
+.timeDisplay div {
+  width: 150px;
+  height: 150px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #747d85;
+  background-color: #fdfdfd;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 6px 12px -2px,
+    rgba(0, 0, 0, 0.3) 0px 3px 7px -3px;
+  border-radius: 3px;
+  -webkit-border-radius: 3px;
+  -moz-border-radius: 3px;
+  -ms-border-radius: 3px;
+  -o-border-radius: 3px;
+}
+
+.timeDisplay span {
+  color: #eb4747;
+  font-size: 50px;
+}
+
+.buttons {
+  width: 90%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.buttons button {
+  padding: 10px 45px;
+  font-size: 15px;
+  font-weight: 500;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  transition: 1s;
+  -webkit-transition: 1s;
+  -moz-transition: 1s;
+  -ms-transition: 1s;
+  -o-transition: 1s;
+  border-radius: 5px;
+  -webkit-border-radius: 5px;
+  -moz-border-radius: 5px;
+  -ms-border-radius: 5px;
+  -o-border-radius: 5px;
+  color: #747d85;
+}
+
+.buttons button:first-of-type,
+.buttons button:last-of-type {
+  background-color: transparent;
+}
+
+.buttons button:nth-child(2),
+.buttons button:first-of-type:hover,
+.buttons button:last-of-type:hover {
+  background-color: #eb4747;
+  color: #ffffff;
+}
+
+.buttons button:hover {
+  transform: translateY(-2px);
+  -webkit-transform: translateY(-2px);
+  -moz-transform: translateY(-2px);
+  -ms-transform: translateY(-2px);
+  -o-transform: translateY(-2px);
+}
+
+/* Media Query */
+
+@media screen and (max-width: 340px) {
+  .timeDisplay {
+    font-size: 35px;
+  }
+
+  .timeDisplay div {
+    width: 65px;
+    height: 65px;
+  }
+
+  .timeDisplay span {
+    font-size: 40px;
+  }
+
+  .buttons {
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  .buttons button {
+    padding: 5px 15px;
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 341px) and (max-width: 765px) {
+  .timeDisplay {
+    font-size: 50px;
+  }
+
+  .timeDisplay div {
+    width: 95px;
+    height: 95px;
+  }
+
+  .buttons button {
+    padding: 7px 20px;
+  }
+}

@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Note App</title>
+    <!-- Main File CSS -->
+    <link rel="stylesheet" href="CSS/style.css" />
+    <!-- Fontawesome Icons -->
+    <link rel="stylesheet" href="CSS/all.min.css" />
+  </head>
+  <body>
+
+    <!-- Window Add New Note And Update Note -->
+    <!-- Start Popup Box -->
+      <div class="popup-box" id="popup-box">
+        <div class="popup">
+          <div class="popup-contect">
+              <header>
+                <p>Add a new Note</p>
+                <i class="fa-solid fa-xmark" id="close-win"></i>
+              </header>
+
+              <form action="#">
+                <div class="row title">
+                  <label>Title</label>
+                   <input type="text">
+                </div>
+                <div class="row description">
+                  <label>Description</label>
+                   <textarea></textarea>
+                </div>
+                <button id="btnAdd">Add Note</button>
+              </form>
+
+          </div>
+        </div>
+      </div>
+      <!-- End Popup Box -->
+      <!-- Start Wrapper -->
+      <div class="wrapper">
+        <header>
+          <h1>Notes</h1>
+        </header>
+
+        <div class="add-box">
+            <button id="btn-add"><i class="fa-solid fa-plus"></i></button>
+        </div>
+
+        <div class="contect" id="contect">
+        </div>
+      </div>
+      <!-- End Wrapper-->
+      <!-- Script -->
+    <script src="main.js"></script>
+  </body>
+</html>
