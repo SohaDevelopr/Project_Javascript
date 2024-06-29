@@ -1,0 +1,358 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOSTARP -->
+    <!-- IMPORT SCRIPTS & STYLES -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Icons Library -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- Fontawsome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Flow Shop</title>
+  </head>
+  <body class="min-vh-100 poppins-regular">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a class="navbar-brand text-uppercase fs-4 gloock-regular ms-2" href="#"
+          >Flow.</a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="shop_products.html"
+                >Shop</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#our-story">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact_us.html">Get in Touch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#gallery">Gallery</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link" href="login_resister.html">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shopping_cart.html"
+                >Cart (<span class="cart">0</span>)</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR// -->
+    <!-- Aletr -->
+    <div class="liveAlert">
+      <div
+        class="alert alert-success alert-dismissible text-capitalize"
+        role="alert"
+      >
+        <div>The addition of the product was successful.</div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <!-- //Aletr// -->
+    <!-- Banner -->
+    <section
+      class="banner w-100 vh-100 d-flex justify-content-center align-items-center px-3 mb-5"
+      id="home"
+    >
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center"
+        style="padding-top: 8rem"
+      >
+        <h2 class="mb-0 playball-regular">Welcome to Flow Shop</h2>
+        <h1 class="playfair-display-font text-capitalize">
+          Fresh flowers for any budget.
+        </h1>
+        <p class="mb-4">
+          Proin gravida nibh vel velit auctor aliquet. Aenean sollicitudin,
+          lorem quis bibe ndum auctor, nisi elit conse quat ipsu. Proin gravida
+          nibh vel velit auctor ali quet. Aen ean sol lici tudin, lorem quis
+          biben dum.
+        </p>
+        <a
+          href="shop_products.html"
+          class="btn btn-dark fw-normal rounded-0 text-uppercase"
+          style="width: 135px; height: 40px"
+        >
+          Shop Now
+        </a>
+      </div>
+    </section>
+    <!-- //Banner// -->
+    <!-- Our Story Section  -->
+    <section class="our-story w-100 mb-5" id="our-story">
+      <div class="container">
+        <div
+          class="w-100 h-100 row row-cols-1 row-cols-md-2 g-4 justify-content-center align-items-center"
+        >
+          <div class="col">
+            <h1 class="mb-4 playball-regular">
+              <i class="material-icons-outlined fs-2 me-1">spa</i>Our Story
+            </h1>
+            <p class="">
+              It all begins with an idea. Maybe you want to launch a business.
+              Maybe you want to turn a hobby into something more. Or maybe you
+              have a creative project to share with the world. Whatever it is,
+              the way you tell your story online can make all the difference.
+            </p>
+            <p class="">
+              Don’t worry about sounding professional. Sound like you. There are
+              over 1.5 billion websites out there, but your story is what’s
+              going to separate this one from the rest. If you read the words
+              back and don’t hear your own voice in your head, that’s a good
+              sign you still have more work to do.
+            </p>
+          </div>
+          <div class="col">
+            <img
+              class="w-100 object-fit-cover"
+              src="./images/story-img.jpg"
+              alt=""
+              style="height: 450px"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- //Our Story Section//  -->
+    <!-- Banner Two -->
+    <section
+      class="banner-2 w-100 d-flex justify-content-center align-items-center px-3 mb-5"
+      style="height: 80vh"
+    >
+      <div
+        class="container d-flex flex-column justify-content-center align-items-center"
+      >
+        <h1 class="playfair-display-font text-capitalize">
+          Learn how to design flowers.
+        </h1>
+        <p class="mb-4 fs-6">
+          lorem quis bibe ndum auctor, nisi elit conse quat ipsu. Proin gravida
+          nibh vel velit auctor ali quet. Aen ean sol lici tudin, lorem quis
+          biben dum.
+        </p>
+        <a
+          href="read_more.html"
+          class="btn btn-outline-light fw-normal rounded-0 text-uppercase"
+          style="width: 135px; height: 40px"
+        >
+          Read More
+        </a>
+      </div>
+    </section>
+    <!-- //Banner Two// -->
+    <!-- Best Sallery Section  -->
+    <section class="best-sallers w-100 h-100 mb-5" id="best-sallers">
+      <div class="container">
+        <div class="mb-5 text-center text-capitalize">
+          <h1 class="playball-regular fs-1">
+            <i class="material-icons-outlined fs-2 me-1">spa</i>Best Sellery
+          </h1>
+          <p style="font-size: 13px">
+            Transform your home or office with our gorgeous best selling
+            seasonal arrangements.
+          </p>
+        </div>
+        <div
+          class="w-100 h-100 d-flex flex-column justify-content-center align-items-center"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-3 g-4 justify-content-center manrope-font mb-5"
+          >
+          </div>
+          <!-- //Row// -->
+          <a
+            href="shop_products.html"
+            class="btn btn-outline-dark fw-normal rounded-0 text-uppercase"
+            style="width: 135px; height: 40px"
+          >
+            View All
+          </a>
+        </div>
+      </div>
+      <!-- //Container// -->
+    </section>
+    <!-- //Our Story Section//  -->
+    <!-- Servise Section  -->
+    <section class="servise w-100 h-100 mb-5 pt-5" id="servise">
+      <div class="container">
+        <div class="mb-5 pt-5 text-center text-capitalize">
+          <h1 class="playball-regular fs-1">
+            <i class="material-icons-outlined fs-2 me-1">spa</i>What We Do
+          </h1>
+          <p style="font-size: 13px">
+            It all begins with an idea. Maybe you want to launch a business.
+          </p>
+        </div>
+        <div
+          class="w-100 h-100 d-flex flex-column justify-content-center align-items-center pt-4"
+        >
+          <div
+            class="row row-cols-1 row-cols-md-3 g-4 justify-content-center manrope-font mb-5"
+          >
+            <div class="col">
+              <div class="card">
+                <img src="./images/w-1.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">Fresh Flowers from our farm</h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <img src="./images/w-2.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    Event Decoration serivce by our Experts
+                  </h5>
+                </div>
+              </div>
+            </div>
+
+            <div class="col">
+              <div class="card">
+                <img src="./images/w-3.png" class="card-img-top" alt="..." />
+                <div class="card-body">
+                  <h5 class="card-title">
+                    pick flowers with the help of florist
+                  </h5>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- //Row// -->
+        </div>
+      </div>
+      <!-- //Container// -->
+    </section>
+    <!-- //Servise Section//  -->
+    <!-- Gallery Section -->
+    <div class="gallery mb-5" id="gallery">
+      <div class="container">
+        <div class="row row-cols-1 row-cols-md-2 mb-5">
+          <div class="col-sm-6">
+            <img
+              src="./images/gallery-1.jpg"
+              alt="gallery-img"
+              class="mb-4 w-100"
+            />
+          </div>
+
+          <div class="col-sm-6">
+            <img
+              src="./images/gallery-3.jpg"
+              alt="gallery-img"
+              class="mb-4 w-100"
+            />
+            <img src="./images/gallery-2.jpg" alt="gallery-img" class="w-100" />
+            <!-- <img src="./images/gallery-4.jpg" alt="gallery-img" class="w-100"> -->
+          </div>
+        </div>
+        <!-- //Row// -->
+      </div>
+    </div>
+    <!-- //Gallery Section// -->
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white pt-4">
+      <h5 class="my-4 text-uppercase fs-1 gloock-regular">Flow.</h5>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+      <!-- Section: Social media -->
+      <section class="my-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#"
+          role="button"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <!-- Google -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-google"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="copyright text-capitalize">
+          © 2024 <span class="text-uppercase">Flow.</span> All Right served
+        </div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- //Footer// -->
+  </body>
+  <script src="./JQuery/jquery-3.7.1.min.js"></script>
+  <script src="./JS/app.js"></script>
+  <script src="./JS/shopping_cart.js"></script>
+</html>

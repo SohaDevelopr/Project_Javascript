@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOSTARP -->
+    <!-- IMPORT SCRIPTS & STYLES -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Icons Library -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- Fontawsome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Flow Shop</title>
+  </head>
+  <body class="min-vh-100 poppins-regular">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-uppercase fs-4 gloock-regular ms-2"
+          href="index.html"
+          >Flow.</a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="shop_products.html"
+                >Shop</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#our-story">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact_us.html">Get in Touch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#gallery">Gallery</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link" href="login_resister.html">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shopping_cart.html"
+                >Cart (<span class="cart">0</span>)</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR// -->
+    <!-- Aletr -->
+    <div class="liveAlert">
+      <div
+        class="alert alert-success alert-dismissible text-capitalize"
+        role="alert"
+      >
+        <div>The addition of the product was successful.</div>
+        <button
+          type="button"
+          class="btn-close"
+          data-bs-dismiss="alert"
+          aria-label="Close"
+        ></button>
+      </div>
+    </div>
+    <!-- //Aletr// -->
+    <!-- Container  -->
+    <div class="container mt-5 py-5 overflow-hidden" style="min-height: 75vh;" id="show-product">
+      <div
+        class="row row-cols-1 row-cols-md-2 pt-3 px-2 justify-content-center"
+      >
+        <div class="col order-2 order-md-1 mt-5">
+          <h1
+            class="gloock-regular fs-1 mb-3 text-capitalize"
+            id="product-name"
+            style="letter-spacing: 2px"
+          ></h1>
+          <p class="manrope-font fs-4 mb-5" id="product-price"></p>
+          <p
+            class=""
+            style="
+              width: 95%;
+              font-size: 12px;
+              line-height: 1.5em;
+              text-align: justify;
+            "
+          >
+            Here is a description of your product. Duis faucibus nibh a eros
+            scelerisque, id porttitor quam pharetra. Suspendisse ut elit
+            egestas, euismod eros at, eleifend neque. Sed nibh erat, aliquam
+            pharetra leo sit amet, sagittis bibendum massa. Nam aliquet nunc
+            ullamcorper, accumsan tortor in, cursus erat. Vestibulum vehicula
+            magna efficitur felis molestie mollis.
+          </p>
+          <div class="mt-5" style="width: 80px">
+            <label class="form-label">Quantity :</label>
+            <input
+              class="form-control rounded-0 arabicNumbers"
+              id="quantity-field"
+              type="number"
+              value="1"
+              min="0"
+            />
+          </div>
+          <div class="mt-4">
+            <button
+              class="add-to-cart-btn btn btn-dark fw-normal rounded-0 text-capitalize w-75"
+              id=""
+              style="height: 45px"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="col order-1 order-md-2">
+          <div class="w-100 h-100 d-flex justify-content-center img-box">
+            <img
+              src=""
+              loading="lazy" 
+              alt=""
+              class="object-fit-cover"
+              id="product-img"
+              style="width: 85%; height: 86%; object-position: 50% 50%"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- //Container//  -->
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white pt-4 mt-5">
+      <h5 class="my-4 text-uppercase fs-1 gloock-regular">Flow.</h5>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+      <!-- Section: Social media -->
+      <section class="my-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#"
+          role="button"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <!-- Google -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-google"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="copyright text-capitalize">
+          © 2024 <span class="text-uppercase">Flow.</span> All Right served
+        </div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- //Footer// -->
+  </body>
+  <script src="./JQuery/jquery-3.7.1.min.js"></script>
+  <script src="./JS/app.js"></script>
+  <script src="./JS/shopping_cart.js"></script>
+  <script src="./JS/quick_view_product.js" type="module"></script>
+</html>

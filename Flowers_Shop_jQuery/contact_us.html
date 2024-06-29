@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOSTARP -->
+    <!-- IMPORT SCRIPTS & STYLES -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Icons Library -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- Fontawsome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Flow Shop</title>
+  </head>
+  <body class="min-vh-100 poppins-regular">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-uppercase fs-4 gloock-regular ms-2"
+          href="index.html"
+          >Flow.</a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link active" aria-current="page" href="shop_products.html">Shop</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#our-story">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact_us.html">Get in Touch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#gallery">Gallery</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link" href="login_resister.html">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shopping_cart.html">Cart (<span class="cart">0</span>)</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR// -->
+    <!-- Container  -->
+    <div class="contact-us container my-5 pb-5 pt-4">
+      <div class="row row-cols-1 row-cols-md-2 mt-4 g-5">
+        <div class="col">
+          <div class="px-2">
+            <h1
+              class="fs-1 gloock-regular mb-4 text-capitalize"
+              style="letter-spacing: 2px"
+            >
+              We would love to hear from you.
+            </h1>
+            <p class="mb-3" style="font-size: 14px;">
+              It all begins with an idea. Maybe you want to launch a business.
+              Maybe you want to turn a hobby into something more. Or maybe you
+              have a creative project to share with the world. Whatever it is,
+              the way you tell your story online can make all the difference.
+            </p>
+            <p class="mb-0">Flow@gmail.com</p>
+            <p>(555) 555-5555</p>
+            <img src="./images/gallery-4.jpg" alt="" class="w-100 rounded mt-3 object-fit-cover" style="height: 210px; object-position: 50% 35%;">
+          </div>
+        </div>
+        <div class="col manrope-font">
+          <div class="mb-3 d-flex justify-content-between gap-2">
+            <div class="w-50">
+              <label for="input1" class="form-label"
+                >First Name <span class="text-danger">*</span></label
+              >
+              <input type="text" class="form-control" id="input1" required />
+            </div>
+            <div class="w-50">
+              <label for="input2" class="form-label"
+                >Last Name <span class="text-danger">*</span></label
+              >
+              <input type="text" class="form-control" id="input2" required />
+            </div>
+          </div>
+          <div class="mb-3">
+            <label for="emailInput" class="form-label"
+              >Email <span class="text-danger">*</span></label
+            >
+            <input type="email" class="form-control" id="emailInput" required />
+          </div>
+          <div class="mb-3">
+            <label for="phoneInput" class="form-label"
+              >Phone <span class="text-danger">*</span></label
+            >
+            <input type="text" class="form-control" id="phoneInput" required />
+          </div>
+          <div class="mb-3">
+            <label for="select" class="form-label"
+              >Service Needed <span class="text-danger">*</span></label
+            >
+            <select
+              class="form-select"
+              aria-label="Default select example"
+              id="select"
+            >
+              <option selected>Select one</option>
+              <option value="1">Weddings</option>
+              <option value="2">Event Florals</option>
+              <option value="3">Gifting</option>
+              <option value="4">Press Inquiry</option>
+              <option value="5">Other</option>
+            </select>
+          </div>
+          <div class="mb-3">
+            <label for="textarea" class="form-label"
+              >Message <span class="text-danger">*</span></label
+            >
+            <textarea class="form-control" id="textarea" rows="3"></textarea>
+          </div>
+          <button
+            class="btn btn-dark fw-normal rounded-0 text-capitalize"
+            style="width: 135px; height: 40px"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+    <!-- //Container//  -->
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white pt-4">
+      <h5 class="my-4 text-uppercase fs-1 gloock-regular">Flow.</h5>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+      <!-- Section: Social media -->
+      <section class="my-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#"
+          role="button"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <!-- Google -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-google"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="copyright text-capitalize">
+          © 2024 <span class="text-uppercase">Flow.</span> All Right served
+        </div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- //Footer// -->
+  </body>
+  <script src="./JQuery/jquery-3.7.1.min.js"></script>
+  <script src="./JS/app.js"></script>
+  <script src="./JS/shopping_cart.js"></script>
+</html>

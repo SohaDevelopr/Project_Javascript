@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- BOOSTARP -->
+    <!-- IMPORT SCRIPTS & STYLES -->
+    <link
+      rel="stylesheet"
+      href="./node_modules/bootstrap/dist/css/bootstrap.min.css"
+    />
+    <script src="./node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Google Icons Library -->
+    <link
+      href="https://fonts.googleapis.com/css?family=Material+Icons|Material+Icons+Outlined|Material+Icons+Two+Tone|Material+Icons+Round|Material+Icons+Sharp"
+      rel="stylesheet"
+    />
+    <!-- Fontawsome Library -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+      integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <!-- CSS -->
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <title>Flow Shop</title>
+  </head>
+  <body class="min-vh-100 poppins-regular">
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
+      <div class="container-fluid">
+        <a
+          class="navbar-brand text-uppercase fs-4 gloock-regular ms-2"
+          href="index.html"
+          >Flow.</a
+        >
+        <button
+          class="navbar-toggler border-0"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a
+                class="nav-link active"
+                aria-current="page"
+                href="shop_products.html"
+                >Shop</a
+              >
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#our-story">Our Story</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="contact_us.html">Get in Touch</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="index.html#gallery">Gallery</a>
+            </li>
+          </ul>
+          <ul class="navbar-nav mb-2 mb-lg-0 text-capitalize">
+            <li class="nav-item">
+              <a class="nav-link" href="#">Account</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="shopping_cart.html"
+                >Cart (<span class="cart">0</span>)</a
+              >
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+    <!-- //NAVBAR// -->
+    <!-- Container  -->
+    <div class="login-resister container my-5 py-5" style="height: 110vh;">
+      <div class="w-100 h-100 d-flex justify-content-center align-items-center mb-5 pt-5">
+        <!-- Login -->
+        <div class="card manrope-font border-0 text-capitalize" id="login-card" style="width: 540px">
+          <div class="card-body">
+            <h1 class="card-title playfair-display-font mb-3">Login</h1>
+            <p class="mb-4 text-secondary" style="font-size: 13px;">lorem quis bibe ndum auctor, nisi elit conse quat ipsu.</p>
+            <div class="mb-3">
+              <label for="emailInput1" class="form-label">Email Address <span class="text-danger">*</span></label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailInput1"
+                required
+              />
+            </div>
+            <div class="mb-2">
+              <label for="passwordInput1" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passwordInput1"
+                required
+              />
+            </div>
+            <button type="button" class="btn btn-link text-decoration-none text-secondary float-end px-0 mb-3" id="reset-password">Forgot Password ?</button>
+            <button
+              class="btn btn-dark fw-normal rounded-0 text-capitalize w-100 mb-4"
+              style="height: 41px;"
+            >
+              Login
+            </button>
+            <h6 class="text-center text-uppercase mb-3">or</h6>
+            <div class="w-100 h-100 d-flex justify-content-center mb-5">
+              <button type="button" class="btn btn-outline-dark px-4 fs-6 rounded-0">
+                <img src="./images/google.png" alt="" class="me-2">
+                Login with Google
+              </button>
+            </div>
+            <p class="text-center" style="font-size: 13px;">Don't have an account? <button type="button" class="btn btn-link text-decoration-none text-secondary p-0 ms-1 mb-1" style="font-size: inherit;" id="go-to-resister">Resister</button></p>
+          </div>
+        </div>
+        <!-- //Login// -->
+        <!-- Resister -->
+        <div class="card manrope-font border-0 text-capitalize" id="resister-card" style="width: 540px">
+          <div class="card-body">
+            <h1 class="card-title playfair-display-font mb-3">Resister</h1>
+            <p class="mb-4 text-secondary" style="font-size: 13px;">lorem quis bibe ndum auctor, nisi elit conse quat ipsu.</p>
+            <div class="mb-3">
+              <label for="nameInput" class="form-label">Name <span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="nameInput"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="emailInput2" class="form-label">Email Address <span class="text-danger">*</span></label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailInput2"
+                required
+              />
+            </div>
+            <div class="mb-3">
+              <label for="phoneInput" class="form-label">Phone <span class="text-danger">*</span></label>
+              <input
+                type="text"
+                class="form-control"
+                id="phoneInput"
+                required
+              />
+            </div>
+            <div class="mb-5">
+              <label for="passwordInput2" class="form-label">Password</label>
+              <input
+                type="password"
+                class="form-control"
+                id="passwordInput2"
+                required
+              />
+            </div>
+            <button
+              class="btn btn-dark fw-normal rounded-0 text-capitalize w-100 mb-5"
+              style="height: 41px;"
+            >
+              Resister
+            </button>
+            <p class="text-center" style="font-size: 13px;">already have account? <button type="button" class="btn btn-link text-decoration-none text-secondary p-0 ms-1 mb-1" style="font-size: inherit;" id="go-to-login">Login</button></p>
+          </div>
+        </div>
+        <!-- //Resister// -->
+        <!-- Reset Password  -->
+        <div class="card manrope-font border-0 text-capitalize" id="reset-password-card" style="width: 540px">
+          <div class="card-body">
+            <h1 class="card-title playfair-display-font mb-3">reset password</h1>
+            <p class="mb-4 text-secondary" style="font-size: 13px;">lorem quis bibe ndum auctor, nisi elit conse quat ipsu.</p>
+            <div class="mb-4">
+              <label for="emailInput3" class="form-label">email address</label>
+              <input
+                type="email"
+                class="form-control"
+                id="emailInput3"
+                required
+              />
+            </div>
+            <button
+              class="btn btn-dark fw-normal rounded-0 text-capitalize w-100 mb-4"
+              style="height: 41px;"
+            >
+              Submit
+            </button>
+            <button type="button" class="w-100 btn btn-link text-decoration-none text-center text-secondary" id="back-to-login" style="font-size: 14px;">Back to Login</button>
+          </div>
+        </div>
+        <!-- //Reset Password// -->
+      </div>
+    </div>
+    <!-- //Container//  -->
+    <!-- Footer -->
+    <footer class="bg-dark text-center text-white pt-4">
+      <h5 class="my-4 text-uppercase fs-1 gloock-regular">Flow.</h5>
+      <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit</p>
+      <!-- Section: Social media -->
+      <section class="my-4">
+        <!-- Facebook -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#"
+          role="button"
+        >
+          <i class="fab fa-facebook-f"></i>
+        </a>
+
+        <!-- Twitter -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-twitter"></i>
+        </a>
+
+        <!-- Google -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-google"></i>
+        </a>
+
+        <!-- Instagram -->
+        <a
+          class="btn btn-outline-light btn-floating m-1"
+          href="#!"
+          role="button"
+        >
+          <i class="fab fa-instagram"></i>
+        </a>
+      </section>
+      <!-- Section: Social media -->
+
+      <!-- Copyright -->
+      <div class="text-center p-2" style="background-color: rgba(0, 0, 0, 0.2)">
+        <div class="copyright text-capitalize">
+          © 2024 <span class="text-uppercase">Flow.</span> All Right served
+        </div>
+      </div>
+      <!-- Copyright -->
+    </footer>
+    <!-- //Footer// -->
+  </body>
+  <script src="./JQuery/jquery-3.7.1.min.js"></script>
+  <script>
+    $(function () {
+      $("#resister-card").hide();
+      $("#reset-password-card").hide();
+      $("#go-to-resister").click(function(){
+        $("#login-card").hide();
+        $("#resister-card").show("slow");
+      }); 
+      $("#reset-password").click(function(){
+        $("#login-card").hide();
+        $("#reset-password-card").show("slow");
+      }); 
+      $("#go-to-login").click(function(){
+        $("#resister-card").hide();
+        $("#login-card").show("slow");
+      }); 
+      $("#back-to-login").click(function(){
+        $("#reset-password-card").hide();
+        $("#login-card").show("slow");
+      }); 
+    });
+  </script>
+</html>
